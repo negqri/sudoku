@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>数独解決君</title>
+</head>
+<body>
+    <h1>数独解決君</h1>
+    <div class="sudoku-board">
+        <!-- 81マスを自動生成 -->
+    </div>
+    <div class="button-container">
+        <button id="solve-button" class="green-button">解く</button>
+        <button id="clear-board-button" class="red-button">盤面消去</button>
+        <button id="clear-cell-button" class="red-button">入力消去</button>
+        <button id="recreate-board-button" class="blue-button">盤面再現</button>
+        <input type="file" id="file-input" accept="image/*" style="display: none;">
+    </div>
+    
+    <div class="number-buttons">
+        <button class="number-button">1</button>
+        <button class="number-button">2</button>
+        <button class="number-button">3</button>
+        <button class="number-button">4</button>
+        <button class="number-button">5</button>
+        <button class="number-button">6</button>
+        <button class="number-button">7</button>
+        <button class="number-button">8</button>
+        <button class="number-button">9</button>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.1/dist/tesseract.min.js"></script>
+</body>
+</html>

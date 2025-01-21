@@ -1,0 +1,149 @@
+/* 全体のデザイン */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* 数独盤 */
+.sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  grid-template-rows: repeat(9, 40px);
+  gap: 2px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+/* マスの基本スタイル */
+.sudoku-board div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* ボタンのデザイン */
+.button-container {
+  margin-top: 20px;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ボタンの色 */
+.green-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.red-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.blue-button {
+  background-color: #2196F3;
+  color: white;
+}
+
+/* ボタンのホバー時のスタイル */
+button:hover {
+  opacity: 0.9;
+}
+
+/* 太線の指定 (ブロック区切り) */
+.sudoku-board div:nth-child(1), .sudoku-board div:nth-child(4), .sudoku-board div:nth-child(7), 
+.sudoku-board div:nth-child(28), .sudoku-board div:nth-child(31), .sudoku-board div:nth-child(34), 
+.sudoku-board div:nth-child(55), .sudoku-board div:nth-child(58), .sudoku-board div:nth-child(61) {
+  border-top: 3px solid black; border-left: 3px solid black;
+}
+.sudoku-board div:nth-child(3), .sudoku-board div:nth-child(6), .sudoku-board div:nth-child(9),  
+.sudoku-board div:nth-child(33), .sudoku-board div:nth-child(36), .sudoku-board div:nth-child(57), 
+.sudoku-board div:nth-child(30), .sudoku-board div:nth-child(60), .sudoku-board div:nth-child(63) {
+  border-top: 3px solid black; border-right: 3px solid black;
+}
+.sudoku-board div:nth-child(19), .sudoku-board div:nth-child(22), .sudoku-board div:nth-child(25),
+.sudoku-board div:nth-child(46), .sudoku-board div:nth-child(49), .sudoku-board div:nth-child(52),
+.sudoku-board div:nth-child(73), .sudoku-board div:nth-child(76), .sudoku-board div:nth-child(79) {
+  border-left: 3px solid black; border-bottom: 3px solid black;
+}
+.sudoku-board div:nth-child(21),.sudoku-board div:nth-child(24), .sudoku-board div:nth-child(27),
+.sudoku-board div:nth-child(48), .sudoku-board div:nth-child(51), .sudoku-board div:nth-child(54),
+.sudoku-board div:nth-child(75), .sudoku-board div:nth-child(78), .sudoku-board div:nth-child(81) {
+  border-right: 3px solid black; border-bottom: 3px solid black;
+}
+.sudoku-board div:nth-child(2),.sudoku-board div:nth-child(5), .sudoku-board div:nth-child(8),
+.sudoku-board div:nth-child(29), .sudoku-board div:nth-child(32), .sudoku-board div:nth-child(35),
+.sudoku-board div:nth-child(56), .sudoku-board div:nth-child(59), .sudoku-board div:nth-child(62) {
+  border-top: 3px solid black;
+}
+.sudoku-board div:nth-child(10), .sudoku-board div:nth-child(13), .sudoku-board div:nth-child(16),
+.sudoku-board div:nth-child(37), .sudoku-board div:nth-child(40), .sudoku-board div:nth-child(43),
+.sudoku-board div:nth-child(64), .sudoku-board div:nth-child(67), .sudoku-board div:nth-child(70) {
+  border-left: 3px solid black;
+}
+.sudoku-board div:nth-child(20), .sudoku-board div:nth-child(23), .sudoku-board div:nth-child(26),
+.sudoku-board div:nth-child(47), .sudoku-board div:nth-child(50), .sudoku-board div:nth-child(53),
+.sudoku-board div:nth-child(74), .sudoku-board div:nth-child(77), .sudoku-board div:nth-child(80) {
+  border-bottom: 3px solid black;
+}
+.sudoku-board div:nth-child(12), .sudoku-board div:nth-child(15), .sudoku-board div:nth-child(18),
+.sudoku-board div:nth-child(39), .sudoku-board div:nth-child(42), .sudoku-board div:nth-child(45),
+.sudoku-board div:nth-child(66), .sudoku-board div:nth-child(69), .sudoku-board div:nth-child(72) {
+  border-right: 3px solid black;
+}
+
+.number-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.number-button {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  color: rgb(89, 137, 89);
+  background-color: rgba(150, 150, 150, 0.376);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.number-button:hover {
+  background-color: blue;
+}
+
+.sudoku-cell {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid gray;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sudoku-cell.selected {
+  background-color: lightblue;
+  border-color: blue;
+}
